@@ -18,8 +18,7 @@
                     <p>Aгропарк<br>СГАУ</p>
                 </div>
                 <ul class="navigation">
-                    <li><a href="#about">О нас</a></li>
-                    <li><a class="services" href="#dignities">Услуги</a>
+                    <li><a class="nav-link" class="services" href="#dignities">Услуги</a>
                         <ol class="add-services">
                             <li><a href="#vr">Разработка VR/AR</a></li>
                             <li><a href="#course">Образовательные курсы</a></li>
@@ -27,10 +26,12 @@
                             <li><a href="#prototype">Прототипирование</a></li>
                         </ol>
                     </li>
-                    <li><a href="#partners">Партнеры</a></li>
-                    <li><a href="#">3D Тур</a></li>
-                    <li><a href="#allContacts">Контакты</a></li>
+                    <li><a class="nav-link" href="#partners">Партнеры</a></li>
+                    <li><a class="nav-link" href="#allContacts">Контакты</a></li>
                 </ul>
+                <button class="hamb">
+                    <span class="icon"></span>
+                </button>
                 <div class="header-phone">
                     <img src="image/Phone.png" alt="phone" width="24" height="24">
                     <p><a href="tel: +79878002670">+7 (987) 800-26-70</a></p>
@@ -40,8 +41,7 @@
     </header>
     <main>
         <section>
-                <div class="about container">
-                </div>
+            <div class="about container"></div>
         </section>
         <section>
             <div class="container">
@@ -76,8 +76,10 @@
         </section>
         <section>
                 <div class="service1 container">
-                    <div class="service " id="vr">
-                        <div class="ser-photo ph1"></div>
+                    <div class="service" id="vr">
+                        <div class="ser-photo ph1">
+                        <img src="./image/razrab2.jpg" alt="" class="image1">
+                        </div>
                         <div class="ser-info">
                             <h3>Разработка VR/AR</h3>
                             <p>
@@ -88,7 +90,9 @@
                 </div>
                 <div class="service2 container">
                     <div class="service " id="course">
-                        <div class="ser-photo ph2"></div>
+                        <div class="ser-photo ph2">
+                        <img src="./image/agroboty.jpg" alt="" class="image1">
+                        </div>
                         <div class="ser-info">
                             <h3>Образовательные курсы</h3>
                             <p>
@@ -99,7 +103,9 @@
                 </div>
                 <div class="service1 container">
                     <div class="service " id="stanok">
-                        <div class="ser-photo ph3"></div>
+                        <div class="ser-photo ph3">
+                        <img src="./image/stanok.jpg" alt="" class="image1">
+                        </div>
                         <div class="ser-info">
                             <h3>Станочная обработка</h3>
                             <p>
@@ -110,7 +116,9 @@
                 </div>
                 <div class="service2 container">
                     <div class="service " id="prototype">
-                        <div class="ser-photo ph4"></div>
+                        <div class="ser-photo ph4">
+                        <img src="./image/protophoto.jpg" alt="" class="image1">
+                        </div>
                         <div class="ser-info">
                             <h3>Прототипирование</h3>
                             <p>
@@ -148,8 +156,8 @@
                     <h2><b>Контакты:</b></h2>
                         <p itemprop="name"><b>Агропарк СГАУ</b></p>
                         <p><b>Адрес: </b><span itemprop="address">Ул.Советская, 60</span></p>
-                        <p><b>Контактный телефон: </b><span itemprop="telephone"><a href="tel: +79878002670">+7 (987) 800-26-70</a></span></p>
-                        <p><b>Email: </b><span itemprop="email">agropark-sgau@gmail.com</span></p>
+                        <p><b class="contt-1">Контактный телефон: </b><b class="contt-2">Телефон:</b><span itemprop="telephone"><a href="tel: +79878002670">+7 (987) 800-26-70</a></span></p>
+                        <p><b>Email: </b><span itemprop="email">agropark.sgau@gmail.com</span></p>
                 </div>
                 <div class="map">
                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9676a6a1d8f3a0028e8a6798142fe9c23122de70bec33a9c9bbef763e0614f3c&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
@@ -174,5 +182,6 @@
             
         </div>  
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>

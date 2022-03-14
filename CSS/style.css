@@ -16,7 +16,12 @@ body {
     font-family:"Century Gothic", serif;
     line-height: 36px;
     font-size: 24px;
+    overflow-x: hidden;
 }
+.block {
+    overflow: hidden;
+}
+
 header {
     padding: 0;
     font-size: 24px;
@@ -27,8 +32,9 @@ header {
     padding: 0;
     display: grid;
     grid-template-columns: 171px 1fr 245px;   
-    gap: 100px;  
+    gap: 15%;  
     align-items: center;
+
 }
 
 .logo-nav {
@@ -49,6 +55,15 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 0;
+    /* margin-left: auto; */
+}
+
+/* .navigation li:not(.add-services li) {
+    margin-let: 80px;
+} */
+
+.navigation li:first-child {
+    margin: 0;
 }
 
 .navigation li {
@@ -91,12 +106,14 @@ header {
     display: none;
     position: absolute;
     background-color: white;
-    width: 340px;
+    width: auto;
     padding: 0;
 }
 
 .add-services li {
     padding: 10px 20px;
+    font-size: 24px;
+    line-height: 30px;
 }
 
 .add-services li:hover {
@@ -108,6 +125,60 @@ header {
     z-index: 1;
 }
 
+.hamb {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: none;
+    cursor: pointer;
+}
+
+.icon{
+    width: 50px;
+    height: 10px;
+    background-color: #33cc99;
+    position: relative;
+    transition: 0.5s;
+}
+
+.icon::after,
+.icon::before {
+    content: "";
+    width: 50px;
+    height: 10px;
+    position: absolute;
+    background-color: #33cc99;
+    transition: 0.5s;
+}
+
+.icon::after{
+    bottom: 15px;
+    left: 0;
+}
+
+.icon::before{
+    top: 15px;
+    left: 0;
+}
+
+.active{
+    background: transparent;
+}
+
+.active::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.active::before {
+    top: 0;
+    transform: rotate(45deg);
+}
 
 .about {
     z-index: -1;
@@ -142,7 +213,6 @@ header {
 }
 
 .contacts {
-    padding: 0 90px;
     margin: 10px 90px 30px;
     line-height: 16px;
     text-align: left;
@@ -168,6 +238,9 @@ header {
     margin: 0;
     padding: 50px 50px 0;
 }
+.dignities {
+    margin-bottom: 30px;
+}
 
 .all-dignities {
     margin: 10px auto;
@@ -179,7 +252,6 @@ header {
 }
 
 .all-dignities div{
-    height: 280px;
     position: relative;
 }
 
@@ -191,6 +263,7 @@ header {
 .dignities h2{
     padding-bottom: 60px;
     font-size: 2.6em;
+    line-height: 36px;
 }
 
 .dignities p{
@@ -203,7 +276,7 @@ header {
     padding: 10px;
     text-decoration: none;
     position: absolute;
-    bottom: 0;
+    bottom: -25px;
     left: 0;
     border: 1px solid #18A0FB;
 }
@@ -234,30 +307,38 @@ header {
     align-items: center;
 }
 
-.service1 .ser-photo{
-    height: 440px;
+.image1 {
+    width: 100%;
+}
+
+.service1 .ser-photo {
+    /* height: 440px; */
     margin-right: 100px;
     background-size: 100% ;
     background-position:center;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
 
 }
 
-.service2 .ser-photo{
-    height: 440px;
+.service2 .ser-photo {
+    /* height: 440px; */
     margin-left: 100px;
     order: 2;
     background-size: 100%;
     background-position:center;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
 }
 
 .service2 {
-    background: #F5F5F5;;
+    background: #F5F5F5;
 }
 
 
-.service .ph1 {
+/* .service .ph1 {
     background-image: url("../image/razrab2.jpg");
 }
 
@@ -270,12 +351,20 @@ header {
 }
 
 .service .ph4 {
-    background-image: url("../image/protophoto.png");
-}
+    background-image: url("../image/protophoto.jpg");
+} */
 
 .all-partners a:hover img{
     transform: scale(1.1);
     transition: 0.2s;
+}
+
+.contt-1 {
+    display: inline-block;  
+}
+ 
+.contt-2 {
+    display: none;
 }
 
 .map {
@@ -298,7 +387,7 @@ header {
     align-items: center;
     padding: 0 50px;
 }
-.footer-logo {
+.footer-logo{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -307,7 +396,6 @@ header {
     padding: 0;
     margin-right: auto;
 }
-
 
 
 div,
@@ -331,8 +419,9 @@ footer {
         font-size: 18px;
         line-height: 28px;
     }
-    .all-dignities div{
-        height: 200px;
+    .about {
+        background-size: auto 100%;
+        background-position: 0 center;
     }
     .service {
         padding: 50px;
@@ -344,7 +433,7 @@ footer {
 
 @media (max-width: 1366px) {
     .header-nav {
-        gap: 30px;
+        gap: 50px;
     }
     body {
         font-size: 18px;
@@ -360,4 +449,130 @@ footer {
     .about {
         padding-bottom: 700px;
     }
+}
+
+@media (max-width:1100px) {
+    /* .logo-nav p, */
+    .header-phone {
+        display: none;
+    }
+    .header-nav {
+        gap: 100px;
+    }
+    .header-nav {
+        grid-template-columns: 171px 1fr; 
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-nav p {
+        display: none;
+    }
+    .logo-nav {
+        height: 60px;
+    }
+    .header-nav {
+        font-size: 16px;
+        gap: 10px;
+        margin: 0px;
+    }
+    .navigation {
+        display: block;
+        position: absolute;
+        font-size: 2.6em;
+        line-height: 3em;
+        top: 0;
+        right: -100%;
+        background: white;
+        padding: 30px;
+        transition: 1s;
+    }
+    .navigation li:hover .add-services {
+        display: none;
+        z-index: 1;
+    }
+    .hamb {
+        display: flex;
+    }
+    .about {
+        padding-bottom: 415px;
+        background-size: auto 100%;
+    }
+    .dignities {
+        padding: 20px 20px 0;
+    }
+    .dignities h2 {
+        padding-bottom: 20px;
+    }
+    .dignities h3 {
+        padding-bottom: 16px;
+    }
+    .dignities p {
+        padding-bottom: 16px;
+        margin: 0;
+        font-size: 15px;
+    }
+    .all-dignities a {
+        padding: 5px;
+    }
+    .all-dignities {
+        padding: 0 0 0 30px;
+        row-gap: 100px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .all-dignities div {
+        width: 304px;
+        padding-bottom: 20px;
+    }
+    .ser-info h3 {
+        margin: 0 0 20px;
+    }
+    .ser-info p {
+        font-size: 15px;
+    }
+    .service {
+        padding: 20px;
+        display: block;
+    }
+    .service1 .ser-photo {
+        margin: 30px 0;
+    }
+    .service2 .ser-photo {
+        margin: 30px 0;
+    }
+    /* .service1:first-child .ser-photo {
+        background-size: 100% auto;
+    }
+    .service2:last-child .ser-photo {
+        margin: 0;
+    } */
+    .contacts {
+        margin: 10px 45px 30px;
+    }
+    .contt-1 {
+        display: none;  
+      }
+      .contt-2 {
+          display: inline-block;
+      }
+      .for-logo {
+        padding: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* .service1:first-child .ser-photo {
+        height: 220px;
+    }
+    .service2:last-child .ser-photo {
+        height: 200px;
+    } */
+    
+}
+
+.nav-active {
+    right: 0px;
+    transition: 1s;
 }
